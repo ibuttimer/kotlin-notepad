@@ -6,6 +6,7 @@ import android.os.Looper
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.udacity.notepad.R
 import com.udacity.notepad.data.DataStore
 import com.udacity.notepad.data.Note
@@ -22,7 +23,7 @@ class NotesAdapter(private val context: Context) : RecyclerView.Adapter<NotesAda
         setHasStableIds(true)
     }
 
-    override fun onAttachedToRecyclerView(recyclerView: RecyclerView?) {
+    override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
         refresh()
     }
 
@@ -57,6 +58,6 @@ class NotesAdapter(private val context: Context) : RecyclerView.Adapter<NotesAda
     }
 
     class NotesViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val text = itemView.text
+        val text : TextView = itemView.text
     }
 }
